@@ -12,3 +12,6 @@ Pygame
 
 Description:
 To have a look of the project, run the file (Flappy_bird.py) in python.
+
+Credits:
+Tech With Tim (Check out his youtube channel)
