@@ -33,6 +33,10 @@ base_img = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs","base.
 
 gen = 0
 
+
+"""
+Making the Scribes first and then moving on to NN
+"""
 class Bird:
     """
     Bird class representing the flappy bird
@@ -131,6 +135,10 @@ class Bird:
         return pygame.mask.from_surface(self.img)
 
 
+
+"""
+Building Pipes as obstruction
+"""
 class Pipe():
     """
     represents a pipe object
@@ -207,6 +215,10 @@ class Pipe():
 
         return False
 
+
+"""
+The Floor in the game
+"""
 class Base:
     """
     Represnts the moving floor of the game
@@ -248,6 +260,7 @@ class Base:
         win.blit(self.IMG, (self.x2, self.y))
 
 
+
 def blitRotateCenter(surf, image, topleft, angle):
     """
     Rotate a surface and blit it to the window
@@ -261,6 +274,7 @@ def blitRotateCenter(surf, image, topleft, angle):
     new_rect = rotated_image.get_rect(center = image.get_rect(topleft = topleft).center)
 
     surf.blit(rotated_image, new_rect.topleft)
+
 
 def draw_window(win, birds, pipes, base, score, gen, pipe_ind):
     """
@@ -307,6 +321,9 @@ def draw_window(win, birds, pipes, base, score, gen, pipe_ind):
     pygame.display.update()
 
 
+"""
+This part deals with the neural networks
+"""
 def eval_genomes(genomes, config):
     """
     runs the simulation of the current population of
